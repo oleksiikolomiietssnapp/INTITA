@@ -336,7 +336,6 @@
 				49F53EAE25531263008327A6 /* Localizable.strings in Resources */,
 				3FF299F2254ADD800087AEC7 /* Welcome.storyboard in Resources */,
 				3F2E7708255474A100853140 /* AlertView.xib in Resources */,
-				BA8D886C2552DF3D005A44C2 /* Roboto-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +368,6 @@
 				3F2E76FF255408B100853140 /* UserData.swift in Sources */,
 				3FF299ED254ADD800087AEC7 /* SceneDelegate.swift in Sources */,
 				3F2E770B255474C600853140 /* AlertView.swift in Sources */,
-				BA8D8872255487C2005A44C2 /* CustomPageControl.swift in Sources */,
 				3FFAC973254DAAFF00AED580 /* RequestAPI.swift in Sources */,
 				BAF940CE2550754300AE50CE /* PromoTextView.swift in Sources */,
 				84A08F5D2556B9AE00565689 /* LogInViewController.swift in Sources */,

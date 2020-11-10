@@ -11,10 +11,9 @@ class ForgotPasswordViewController: UIViewController, Storyboarded {
     
     weak var coordinator: ForgotPasswordCoordinator?
     
-    var validateEmail = Validate()
-    
     @IBOutlet weak var logoImageView: UIImageView!
     
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var blueLineView: UIView!
     
     @IBOutlet weak var recoveryLabel: UILabel!
@@ -28,8 +27,12 @@ class ForgotPasswordViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        logoImage.rounded()
+        recoveryLabel.shadowed()
+        
         self.recoveryLabel.text = "passRecovery".localized
         self.explanationTextLabel.text = "textRecovery".localized
+        explanationTextLabel.shadowed()
         
         setupInvalidTextLabel()
         setupEmailTextField()
@@ -47,12 +50,10 @@ class ForgotPasswordViewController: UIViewController, Storyboarded {
     
     func setupEmailTextField() {
 
-        emailTextField.layer.cornerRadius = 4
-        emailTextField.borderStyle = .line
-        emailTextField.keyboardAppearance = .dark
-        emailTextField.backgroundColor = .white
+        emailTextField.rounded(cornerRadius: 5)
+        emailTextField.layer.borderWidth = 1
         emailTextField.keyboardType = .emailAddress
-        emailTextField.placeholder = "Enter your Email"
+        emailTextField.placeholder = "inputEmail".localized
         emailTextField.clearButtonMode = .whileEditing
         
     }
@@ -60,8 +61,9 @@ class ForgotPasswordViewController: UIViewController, Storyboarded {
     func setupSendButton() {
         
         let titleLocalized = "send".localized
-        sendButton.layer.cornerRadius = 8
+        sendButton.bordered()
         sendButton.setTitle(titleLocalized, for: .normal)
+        sendButton.rounded()
         
     }
     
@@ -69,7 +71,7 @@ class ForgotPasswordViewController: UIViewController, Storyboarded {
         
         guard let textEmail = self.emailTextField.text else { return }
         
-        if !validateEmail.validateEmail(email: textEmail) {
+        if !textEmail.isValidEmail {
             invalidTextLabel.isHidden = false
             invalidTextLabel.text = "You entered wrong Email"
         } else {
