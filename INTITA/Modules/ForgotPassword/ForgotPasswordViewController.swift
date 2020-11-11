@@ -11,6 +11,8 @@ class ForgotPasswordViewController: UIViewController, Storyboarded {
     
     weak var coordinator: ForgotPasswordCoordinator?
     
+    var validateEmail: Validate!
+    
     @IBOutlet weak var logoImageView: UIImageView!
     
     @IBOutlet weak var logoImage: UIImageView!
@@ -71,7 +73,7 @@ class ForgotPasswordViewController: UIViewController, Storyboarded {
         
         guard let textEmail = self.emailTextField.text else { return }
         
-        if !textEmail.isValidEmail {
+        if !validateEmail.validateEmail(email: textEmail) {
             invalidTextLabel.isHidden = false
             invalidTextLabel.text = "You entered wrong Email"
         } else {
