@@ -14,8 +14,6 @@ class ForgotPasswordViewController: UIViewController, Storyboarded {
     var validateEmail: Validate!
     
     @IBOutlet weak var logoImageView: UIImageView!
-    
-    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var blueLineView: UIView!
     
     @IBOutlet weak var recoveryLabel: UILabel!
@@ -29,7 +27,7 @@ class ForgotPasswordViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logoImage.rounded()
+        logoImageView.rounded()
         recoveryLabel.shadowed()
         
         self.recoveryLabel.text = "passRecovery".localized
